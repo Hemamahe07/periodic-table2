@@ -1,220 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>DevSecOps Periodic Table</title>
-
-    <link rel="stylesheet"
-          href="style.css">
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>DevSecOps Periodic Table</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <!-- Header -->
+  <header>
+    <h1>DevSecOps Periodic Table</h1>
+    <input type="text" id="searchBar" placeholder="Search tools...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+  </header>
 
-    <!-- Background -->
+  <!-- Legend -->
+  <section id="legend" class="legend"></section>
 
-    <div class="bg bg1"></div>
+  <!-- Periodic Table Grid -->
+  <main id="periodicTable" class="grid"></main>
 
-    <div class="bg bg2"></div>
-
-    <!-- Header -->
-
-    <header>
-
-        <h1>
-
-            DevSecOps
-
-            <span>Periodic Table</span>
-
-        </h1>
-
-        <p>
-
-            Interactive DevSecOps Tools Reference
-
-        </p>
-
-    </header>
-
-    <!-- Controls -->
-
-    <section class="controls">
-
-        <input
-            type="text"
-            id="search"
-            placeholder="Search Tool...">
-
-        <select id="category">
-
-            <option value="all">All Categories</option>
-
-            <option value="SCM">SCM</option>
-
-            <option value="CI/CD">CI/CD</option>
-
-            <option value="Container">Container</option>
-
-            <option value="Cloud">Cloud</option>
-
-            <option value="IaC">IaC</option>
-
-            <option value="SAST">SAST</option>
-
-            <option value="DAST">DAST</option>
-
-            <option value="Monitoring">Monitoring</option>
-
-            <option value="Secrets">Secrets</option>
-
-            <option value="Artifact">Artifact</option>
-
-            <option value="Testing">Testing</option>
-
-        </select>
-
-    </section>
-
-    <!-- Legend -->
-
-    <section class="legend">
-
-        <div class="legend-item scm">SCM</div>
-
-        <div class="legend-item cicd">CI/CD</div>
-
-        <div class="legend-item container">Container</div>
-
-        <div class="legend-item cloud">Cloud</div>
-
-        <div class="legend-item iac">IaC</div>
-
-        <div class="legend-item sast">SAST</div>
-
-        <div class="legend-item dast">DAST</div>
-
-        <div class="legend-item monitoring">Monitoring</div>
-
-        <div class="legend-item secrets">Secrets</div>
-
-        <div class="legend-item artifact">Artifact</div>
-
-        <div class="legend-item testing">Testing</div>
-
-    </section>
-
-    <!-- Periodic Table -->
-
-    <main>
-
-        <div id="table-wrapper">
-
-            <div id="periodic-table"
-                 class="periodic-table">
-
-            </div>
-
-        </div>
-
-    </main>
-        <!-- Loading -->
-
-    <div id="loading"
-         class="loading">
-
-        Loading DevSecOps Tools...
-
+  <!-- Popup -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="closePopup">&times;</span>
+      <h2 id="popupSymbol"></h2>
+      <h3 id="popupName"></h3>
+      <p><strong>Category:</strong> <span id="popupCategory"></span></p>
+      <p id="popupDescription"></p>
+      <a id="popupWebsite" href="#" target="_blank">Official Website</a>
     </div>
+  </div>
 
-    <!-- Modal -->
-
-    <div id="modal"
-         class="modal">
-
-        <div class="modal-content">
-
-            <button id="close"
-                    class="close">
-
-                &times;
-
-            </button>
-
-            <img id="logo"
-                 src=""
-                 alt="Tool Logo">
-
-            <h2 id="tool-name">
-
-            </h2>
-
-            <h4 id="tool-category">
-
-            </h4>
-
-            <p id="tool-description">
-
-            </p>
-
-            <a id="tool-link"
-               href="#"
-               target="_blank">
-
-                Visit Official Website
-
-            </a>
-
-        </div>
-
-    </div>
-
-    <!-- Scroll To Top -->
-
-    <button id="scrollTop">
-
-        ↑
-
-    </button>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-
-            © 2026 DevSecOps Periodic Table
-
-        </p>
-
-        <p>
-
-            Built with HTML • CSS • JavaScript • JSON
-
-        </p>
-
-    </footer>
-
-    <!-- JavaScript -->
-
-    <script src="script.js"></script>
-
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
-
 </html>
