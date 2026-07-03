@@ -2,38 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevSecOps Periodic Table</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>DevSecOps Periodic Table</h1>
+  <h1>DevSecOps Periodic Table</h1>
+
+  <!-- Search + Filter -->
+  <div class="controls">
     <input type="text" id="searchBar" placeholder="Search tools...">
     <select id="categoryFilter">
       <option value="all">All Categories</option>
     </select>
-  </header>
+  </div>
 
   <!-- Legend -->
-  <section id="legend" class="legend"></section>
+  <div id="legend"></div>
 
-  <!-- Periodic Table Grid -->
-  <main id="periodicTable" class="grid"></main>
+  <!-- Grid -->
+  <div id="grid" class="grid"></div>
 
   <!-- Popup -->
   <div id="popup" class="popup hidden">
     <div class="popup-content">
       <span id="closePopup">&times;</span>
-      <h2 id="popupSymbol"></h2>
-      <h3 id="popupName"></h3>
-      <p><strong>Category:</strong> <span id="popupCategory"></span></p>
+      <h2 id="popupTitle"></h2>
       <p id="popupDescription"></p>
-      <a id="popupWebsite" href="#" target="_blank">Official Website</a>
+      <a id="popupLink" href="#" target="_blank">Visit Website</a>
     </div>
   </div>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
