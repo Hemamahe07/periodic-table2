@@ -1,15 +1,15 @@
 const categories = {
-  Planning: "#3b82f6",
+  "Planning": "#3b82f6",
   "Source Control": "#6366f1",
   "CI/CD": "#22c55e",
   "Code Quality": "#f59e0b",
   "Security Testing": "#ef4444",
-  Deployment: "#a855f7",
-  IaC: "#14b8a6",
-  Automation: "#0ea5e9",
-  Containers: "#f97316",
+  "Deployment": "#a855f7",
+  "IaC": "#14b8a6",
+  "Automation": "#0ea5e9",
+  "Containers": "#f97316",
   "Secrets Management": "#ec4899",
-  Monitoring: "#84cc16"
+  "Monitoring": "#84cc16"
 };
 
 const table = document.getElementById("table");
@@ -73,19 +73,18 @@ function renderTable() {
       (el.category || "").toLowerCase().includes(q) ||
       (el.details || "").toLowerCase().includes(q);
 
-    const categoryMatch =
-      selectedCategory === "all" || el.category === selectedCategory;
-
+    const categoryMatch = selectedCategory === "all" || el.category === selectedCategory;
     return textMatch && categoryMatch;
   });
 
   filtered.forEach(el => {
     const card = document.createElement("div");
     card.className = "element";
-    card.style.gridColumn = el.col;
-    card.style.gridRow = el.row;
+    card.style.gridColumn = `${el.col}`;
+    card.style.gridRow = `${el.row}`;
     card.style.background = categories[el.category] || "#64748b";
     card.innerHTML = `
+      <div class="badge">${el.category}</div>
       <div class="atomic">${el.atomic}</div>
       <div class="symbol">${el.symbol}</div>
       <div class="name">${el.name}</div>
@@ -98,17 +97,14 @@ function renderTable() {
 async function init() {
   try {
     const response = await fetch("elements.json");
-    if (!response.ok) {
-      throw new Error(`Failed to load elements.json: ${response.status}`);
-    }
-
+    if (!response.ok) throw new Error("Failed to load elements.json");
     elements = await response.json();
     buildLegend();
     renderTable();
   } catch (error) {
     table.innerHTML = `
       <div style="grid-column:1 / -1; color:#fff; padding:20px; background:#b91c1c; border-radius:12px;">
-        Could not load elements.json. Make sure the file is in the same folder as index.html or update the fetch path.
+        Could not load elements.json. Make sure it is in the same folder as index.html.
       </div>
     `;
     console.error(error);
@@ -123,9 +119,7 @@ closeModal.addEventListener("click", () => {
 });
 
 modalBackdrop.addEventListener("click", e => {
-  if (e.target === modalBackdrop) {
-    modalBackdrop.classList.add("hidden");
-  }
+  if (e.target === modalBackdrop) modalBackdrop.classList.add("hidden");
 });
 
 init();
