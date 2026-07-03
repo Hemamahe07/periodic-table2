@@ -116,7 +116,7 @@ body {
   padding: 4px 4px 3px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   overflow: hidden;
@@ -124,12 +124,15 @@ body {
   position: relative;
   min-height: 78px;
   line-height: 1;
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .element:hover {
-  transform: translateY(-2px) scale(1.015);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
-  filter: brightness(1.05);
+  transform: scale(1.16);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.18) saturate(1.15);
+  z-index: 10;
 }
 
 .atomic {
@@ -255,5 +258,9 @@ body {
 
   .badge {
     font-size: 0.36rem;
+  }
+
+  .element:hover {
+    transform: scale(1.12);
   }
 }
