@@ -4,9 +4,9 @@
   --text: #e8ecff;
   --muted: #9ca7d7;
   --border: rgba(255, 255, 255, 0.14);
-  --cell-gap: 10px;
-  --cell-min: 88px;
-  --cell-h: 126px;
+  --cell-gap: 12px;
+  --cell-min: 92px;
+  --cell-h: 132px;
 }
 
 * {
@@ -85,6 +85,7 @@ body {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
   font-size: 0.92rem;
+  white-space: nowrap;
 }
 
 .swatch {
@@ -92,6 +93,7 @@ body {
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+  flex: 0 0 auto;
 }
 
 .table-wrap {
@@ -104,7 +106,7 @@ body {
   grid-template-columns: repeat(18, minmax(var(--cell-min), 1fr));
   grid-template-rows: repeat(4, minmax(var(--cell-h), auto));
   gap: var(--cell-gap);
-  min-width: 1350px;
+  min-width: 1400px;
   align-items: stretch;
 }
 
@@ -120,22 +122,24 @@ body {
   overflow: hidden;
   color: #fff;
   position: relative;
+  min-height: 132px;
 }
 
 .element:hover {
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
   filter: brightness(1.06);
 }
 
 .atomic {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   opacity: 0.95;
   margin-bottom: 4px;
+  line-height: 1;
 }
 
 .symbol {
-  font-size: 1.4rem;
+  font-size: 1.28rem;
   font-weight: 800;
   line-height: 1.05;
   margin-bottom: 6px;
@@ -143,17 +147,18 @@ body {
 }
 
 .name {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   line-height: 1.15;
   opacity: 0.98;
   word-break: break-word;
+  hyphens: auto;
 }
 
 .badge {
   position: absolute;
   top: 8px;
   right: 8px;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   padding: 3px 7px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.18);
@@ -219,5 +224,22 @@ body {
 
   .topbar {
     align-items: stretch;
+  }
+
+  .periodic-table {
+    min-width: 1200px;
+  }
+
+  .element {
+    min-height: 120px;
+    padding: 12px 10px 10px;
+  }
+
+  .symbol {
+    font-size: 1.15rem;
+  }
+
+  .name {
+    font-size: 0.7rem;
   }
 }
