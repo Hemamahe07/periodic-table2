@@ -5,15 +5,16 @@
   --muted: #9ca7d7;
   --border: rgba(255, 255, 255, 0.14);
   --cell-gap: 6px;
-  --cell-min: 60px;
-  --cell-h: 82px;
+  --cell-min: 58px;
+  --cell-h: 84px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   min-height: 100%;
 }
@@ -80,17 +81,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 
 .swatch {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   display: inline-block;
   flex: 0 0 auto;
@@ -106,7 +107,7 @@ body {
   grid-template-columns: repeat(18, minmax(var(--cell-min), 1fr));
   grid-template-rows: repeat(4, minmax(var(--cell-h), auto));
   gap: var(--cell-gap);
-  min-width: 1180px;
+  min-width: 1160px;
   align-items: stretch;
 }
 
@@ -121,7 +122,7 @@ body {
   overflow: hidden;
   color: #fff;
   position: relative;
-  min-height: 82px;
+  min-height: 84px;
   line-height: 1;
 }
 
@@ -132,12 +133,13 @@ body {
 }
 
 .atomic {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
   opacity: 0.96;
   align-self: start;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
+  padding-right: 12px;
 }
 
 .symbol {
@@ -147,20 +149,21 @@ body {
   word-break: break-word;
   overflow-wrap: anywhere;
   align-self: start;
+  padding-right: 12px;
 }
 
 .name {
-  font-size: 0.52rem;
+  font-size: 0.5rem;
   line-height: 1.08;
   opacity: 0.98;
   word-break: break-word;
   overflow-wrap: anywhere;
   align-self: end;
-  margin-top: 2px;
+  padding-right: 2px;
 }
 
 .badge {
-  font-size: 0.46rem;
+  font-size: 0.42rem;
   line-height: 1;
   padding: 2px 4px;
   border-radius: 999px;
@@ -170,7 +173,7 @@ body {
   top: 3px;
   right: 3px;
   white-space: nowrap;
-  max-width: calc(100% - 8px);
+  max-width: calc(100% - 6px);
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -236,11 +239,11 @@ body {
   }
 
   .periodic-table {
-    min-width: 1060px;
+    min-width: 1040px;
   }
 
   .element {
-    min-height: 76px;
+    min-height: 78px;
     padding: 4px 4px 3px;
   }
 
@@ -249,10 +252,10 @@ body {
   }
 
   .name {
-    font-size: 0.48rem;
+    font-size: 0.46rem;
   }
 
   .badge {
-    font-size: 0.42rem;
+    font-size: 0.38rem;
   }
 }
