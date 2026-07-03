@@ -8,9 +8,9 @@
 </head>
 <body>
   <header class="topbar">
-    <div>
+    <div class="title-block">
       <h1>DevSecOps Periodic Table</h1>
-      <p>Interactive sample inspired by the periodic table structure</p>
+      <p>Interactive sample with hover, click details, search, and category colors</p>
     </div>
 
     <div class="controls">
@@ -21,16 +21,17 @@
     </div>
   </header>
 
-  <main>
-    <section class="legend" id="legend"></section>
-    <section class="table-wrap">
-      <div id="table" class="periodic-table"></div>
-    </section>
+  <section class="legend-wrap">
+    <div id="legend" class="legend"></div>
+  </section>
+
+  <main class="table-wrap">
+    <div id="table" class="periodic-table"></div>
   </main>
 
   <div id="modalBackdrop" class="modal-backdrop hidden">
     <div class="modal">
-      <button id="closeModal" class="close-btn">×</button>
+      <button id="closeModal" class="close-btn" aria-label="Close">×</button>
       <div id="modalContent"></div>
     </div>
   </div>
