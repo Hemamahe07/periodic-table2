@@ -100,6 +100,7 @@ body {
 .table-wrap {
   padding: 0 24px 36px;
   overflow-x: auto;
+  overflow-y: visible;
 }
 
 .periodic-table {
@@ -119,20 +120,21 @@ body {
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  overflow: hidden;
+  overflow: visible;
   color: #fff;
   position: relative;
   min-height: 78px;
   line-height: 1;
   transform-origin: center center;
   will-change: transform;
+  z-index: 1;
 }
 
 .element:hover {
-  transform: scale(1.16);
-  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5);
-  filter: brightness(1.18) saturate(1.15);
-  z-index: 10;
+  transform: scale(1.24);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.62);
+  filter: brightness(1.22) saturate(1.18);
+  z-index: 999;
 }
 
 .atomic {
@@ -261,6 +263,6 @@ body {
   }
 
   .element:hover {
-    transform: scale(1.12);
+    transform: scale(1.18);
   }
 }
