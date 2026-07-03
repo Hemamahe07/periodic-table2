@@ -5,8 +5,8 @@
   --muted: #9ca7d7;
   --border: rgba(255, 255, 255, 0.14);
   --cell-gap: 6px;
-  --cell-min: 58px;
-  --cell-h: 84px;
+  --cell-min: 54px;
+  --cell-h: 78px;
 }
 
 * {
@@ -85,13 +85,13 @@ body {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   white-space: nowrap;
 }
 
 .swatch {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
   flex: 0 0 auto;
@@ -107,13 +107,13 @@ body {
   grid-template-columns: repeat(18, minmax(var(--cell-min), 1fr));
   grid-template-rows: repeat(4, minmax(var(--cell-h), auto));
   gap: var(--cell-gap);
-  min-width: 1160px;
+  min-width: 1080px;
   align-items: stretch;
 }
 
 .element {
-  border-radius: 10px;
-  padding: 5px 5px 4px;
+  border-radius: 9px;
+  padding: 4px 4px 3px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
@@ -122,7 +122,7 @@ body {
   overflow: hidden;
   color: #fff;
   position: relative;
-  min-height: 84px;
+  min-height: 78px;
   line-height: 1;
 }
 
@@ -133,28 +133,26 @@ body {
 }
 
 .atomic {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 700;
   opacity: 0.96;
-  align-self: start;
   line-height: 1;
   margin-bottom: 1px;
-  padding-right: 12px;
+  padding-right: 11px;
 }
 
 .symbol {
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.02;
   word-break: break-word;
   overflow-wrap: anywhere;
-  align-self: start;
-  padding-right: 12px;
+  padding-right: 11px;
 }
 
 .name {
-  font-size: 0.5rem;
-  line-height: 1.08;
+  font-size: 0.46rem;
+  line-height: 1.05;
   opacity: 0.98;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -163,17 +161,17 @@ body {
 }
 
 .badge {
-  font-size: 0.42rem;
+  font-size: 0.38rem;
   line-height: 1;
   padding: 2px 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.16);
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 2px;
+  right: 2px;
   white-space: nowrap;
-  max-width: calc(100% - 6px);
+  max-width: calc(100% - 4px);
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -239,23 +237,23 @@ body {
   }
 
   .periodic-table {
-    min-width: 1040px;
+    min-width: 980px;
   }
 
   .element {
-    min-height: 78px;
-    padding: 4px 4px 3px;
+    min-height: 74px;
+    padding: 3px 3px 2px;
   }
 
   .symbol {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .name {
-    font-size: 0.46rem;
+    font-size: 0.43rem;
   }
 
   .badge {
-    font-size: 0.38rem;
+    font-size: 0.36rem;
   }
 }
