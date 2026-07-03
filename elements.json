@@ -38,4 +38,4 @@
 
   { "symbol": "SL", "name": "Slack", "category": "Collaboration", "row": 16, "col": 15, "color": "#FF5722", "description": "Team communication platform.", "website": "https://slack.com" },
   { "symbol": "MS", "name": "Microsoft Teams", "category": "Collaboration", "row": 16, "col": 16, "color": "#FF5722", "description": "Collaboration and communication tool.", "website": "https://teams.microsoft.com" },
-  { "symbol": "ZO", "name": "Zoom", "category": "Collaboration", "row": 16, "col": 17, "color":
+  { "symbol": "ZO", "name": "Zoom", "category": "Collaboration", "row": 16, "col": 17, "color
