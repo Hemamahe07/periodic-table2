@@ -60,12 +60,20 @@ function openModal(el) {
   modalBackdrop.classList.remove("hidden");
 }
 
+function createPlaceholder(row, col) {
+  const box = document.createElement("div");
+  box.className = "placeholder";
+  box.style.gridRow = String(row);
+  box.style.gridColumn = String(col);
+  return box;
+}
+
 function renderTable() {
   const q = searchInput.value.trim().toLowerCase();
   const selectedCategory = categoryFilter.value;
   table.innerHTML = "";
 
-  const filtered = elements.filter(el => {
+  const visible = elements.filter(el => {
     const textMatch =
       el.name.toLowerCase().includes(q) ||
       el.symbol.toLowerCase().includes(q) ||
@@ -77,11 +85,21 @@ function renderTable() {
     return textMatch && categoryMatch;
   });
 
-  filtered.forEach(el => {
+  const used = new Set(visible.map(el => `${el.row}-${el.col}`));
+
+  for (let r = 1; r <= 4; r++) {
+    for (let c = 1; c <= 18; c++) {
+      if (!used.has(`${r}-${c}`)) {
+        table.appendChild(createPlaceholder(r, c));
+      }
+    }
+  }
+
+  visible.forEach(el => {
     const card = document.createElement("div");
     card.className = "element";
-    card.style.gridColumn = `${el.col}`;
-    card.style.gridRow = `${el.row}`;
+    card.style.gridRow = String(el.row);
+    card.style.gridColumn = String(el.col);
     card.style.background = categories[el.category] || "#64748b";
     card.innerHTML = `
       <div class="badge">${el.category}</div>
