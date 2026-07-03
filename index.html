@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevSecOps Periodic Table</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>DevSecOps Periodic Table</h1>
+  <header class="topbar">
+    <div>
+      <h1>DevSecOps Periodic Table</h1>
+      <p>Interactive sample inspired by the periodic table structure</p>
+    </div>
 
-  <!-- Search + Filter -->
-  <div class="controls">
-    <input type="text" id="searchBar" placeholder="Search tools...">
-    <select id="categoryFilter">
-      <option value="all">All Categories</option>
-    </select>
-  </div>
+    <div class="controls">
+      <input id="searchInput" type="text" placeholder="Search by name, symbol, category..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+      </select>
+    </div>
+  </header>
 
-  <!-- Legend -->
-  <div id="legend"></div>
+  <main>
+    <section class="legend" id="legend"></section>
+    <section class="table-wrap">
+      <div id="table" class="periodic-table"></div>
+    </section>
+  </main>
 
-  <!-- Grid -->
-  <div id="grid" class="grid"></div>
-
-  <!-- Popup -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <span id="closePopup">&times;</span>
-      <h2 id="popupTitle"></h2>
-      <p id="popupDescription"></p>
-      <a id="popupLink" href="#" target="_blank">Visit Website</a>
+  <div id="modalBackdrop" class="modal-backdrop hidden">
+    <div class="modal">
+      <button id="closeModal" class="close-btn">×</button>
+      <div id="modalContent"></div>
     </div>
   </div>
 
