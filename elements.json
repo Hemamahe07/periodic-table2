@@ -101,7 +101,7 @@
   },
   {
     "atomic": 11,
-    "symbol": "CD",
+    "symbol": "AR",
     "name": "Argo CD",
     "category": "Deployment",
     "row": 4,
@@ -131,7 +131,7 @@
   },
   {
     "atomic": 14,
-    "symbol": "TC",
+    "symbol": "TFC",
     "name": "Terraform Cloud",
     "category": "IaC",
     "row": 4,
@@ -211,7 +211,7 @@
   },
   {
     "atomic": 22,
-    "symbol": "CS",
+    "symbol": "CX",
     "name": "Checkmarx",
     "category": "Security Testing",
     "row": 6,
@@ -221,7 +221,7 @@
   },
   {
     "atomic": 23,
-    "symbol": "VF",
+    "symbol": "VC",
     "name": "Veracode",
     "category": "Security Testing",
     "row": 7,
@@ -231,7 +231,7 @@
   },
   {
     "atomic": 24,
-    "symbol": "HF",
+    "symbol": "FT",
     "name": "Fortify",
     "category": "Security Testing",
     "row": 7,
@@ -241,7 +241,7 @@
   },
   {
     "atomic": 25,
-    "symbol": "DP",
+    "symbol": "DG",
     "name": "Datadog",
     "category": "Monitoring",
     "row": 7,
@@ -251,7 +251,7 @@
   },
   {
     "atomic": 26,
-    "symbol": "DY",
+    "symbol": "DT",
     "name": "Dynatrace",
     "category": "Monitoring",
     "row": 7,
