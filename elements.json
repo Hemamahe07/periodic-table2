@@ -1,52 +1,302 @@
 [
   {
+    "atomic": 1,
+    "symbol": "JI",
+    "name": "Jira",
+    "category": "Planning",
+    "row": 1,
+    "col": 1,
+    "website": "https://www.atlassian.com/software/jira",
+    "details": "Issue tracking, sprint planning, and workflow management."
+  },
+  {
+    "atomic": 2,
     "symbol": "GH",
     "name": "GitHub",
     "category": "Source Control",
     "row": 1,
-    "col": 1,
-    "color": "#4CAF50",
-    "description": "Version control and collaboration using Git.",
-    "website": "https://github.com"
+    "col": 18,
+    "website": "https://github.com",
+    "details": "Source control, collaboration, and code hosting."
   },
   {
+    "atomic": 3,
     "symbol": "GL",
     "name": "GitLab",
     "category": "Source Control",
-    "row": 1,
-    "col": 18,
-    "color": "#4CAF50",
-    "description": "DevOps platform with Git repositories, CI/CD, and security.",
-    "website": "https://gitlab.com"
-  },
-  {
-    "symbol": "BB",
-    "name": "Bitbucket",
-    "category": "Source Control",
     "row": 2,
     "col": 1,
-    "color": "#4CAF50",
-    "description": "Git repository management for teams.",
-    "website": "https://bitbucket.org"
+    "website": "https://gitlab.com",
+    "details": "Repository hosting, CI/CD, and DevSecOps workflows."
   },
   {
-    "symbol": "DO",
+    "atomic": 4,
+    "symbol": "JN",
+    "name": "Jenkins",
+    "category": "CI/CD",
+    "row": 2,
+    "col": 2,
+    "website": "https://www.jenkins.io",
+    "details": "Automation server for build and delivery pipelines."
+  },
+  {
+    "atomic": 5,
+    "symbol": "SQ",
+    "name": "SonarQube",
+    "category": "Code Quality",
+    "row": 2,
+    "col": 13,
+    "website": "https://www.sonarsource.com/products/sonarqube/",
+    "details": "Static code analysis and quality gates."
+  },
+  {
+    "atomic": 6,
+    "symbol": "SK",
+    "name": "Snyk",
+    "category": "Security Testing",
+    "row": 2,
+    "col": 14,
+    "website": "https://snyk.io",
+    "details": "Dependency, container, and code security scanning."
+  },
+  {
+    "atomic": 7,
+    "symbol": "ZA",
+    "name": "OWASP ZAP",
+    "category": "Security Testing",
+    "row": 3,
+    "col": 1,
+    "website": "https://www.zaproxy.org",
+    "details": "Dynamic application security testing tool."
+  },
+  {
+    "atomic": 8,
+    "symbol": "TR",
+    "name": "Trivy",
+    "category": "Security Testing",
+    "row": 3,
+    "col": 2,
+    "website": "https://trivy.dev",
+    "details": "Vulnerability scanner for containers, filesystems, and IaC."
+  },
+  {
+    "atomic": 9,
+    "symbol": "GHA",
+    "name": "GitHub Actions",
+    "category": "CI/CD",
+    "row": 3,
+    "col": 13,
+    "website": "https://github.com/features/actions",
+    "details": "Workflow automation and build pipelines."
+  },
+  {
+    "atomic": 10,
+    "symbol": "GLC",
+    "name": "GitLab CI",
+    "category": "CI/CD",
+    "row": 3,
+    "col": 14,
+    "website": "https://docs.gitlab.com/ci/",
+    "details": "Integrated CI/CD for GitLab projects."
+  },
+  {
+    "atomic": 11,
+    "symbol": "CD",
+    "name": "Argo CD",
+    "category": "Deployment",
+    "row": 4,
+    "col": 1,
+    "website": "https://argo-cd.readthedocs.io",
+    "details": "GitOps continuous delivery for Kubernetes."
+  },
+  {
+    "atomic": 12,
+    "symbol": "OC",
+    "name": "OpenShift",
+    "category": "Deployment",
+    "row": 4,
+    "col": 2,
+    "website": "https://www.redhat.com/en/technologies/cloud-computing/openshift",
+    "details": "Enterprise Kubernetes platform."
+  },
+  {
+    "atomic": 13,
+    "symbol": "TK",
+    "name": "Tekton",
+    "category": "CI/CD",
+    "row": 4,
+    "col": 13,
+    "website": "https://tekton.dev",
+    "details": "Kubernetes-native CI/CD pipelines."
+  },
+  {
+    "atomic": 14,
+    "symbol": "TC",
+    "name": "Terraform Cloud",
+    "category": "IaC",
+    "row": 4,
+    "col": 14,
+    "website": "https://www.hashicorp.com/products/terraform",
+    "details": "Infrastructure as code workflow and governance."
+  },
+  {
+    "atomic": 15,
+    "symbol": "TF",
+    "name": "Terraform",
+    "category": "IaC",
+    "row": 5,
+    "col": 1,
+    "website": "https://www.terraform.io",
+    "details": "Provision infrastructure as code."
+  },
+  {
+    "atomic": 16,
+    "symbol": "AN",
+    "name": "Ansible",
+    "category": "Automation",
+    "row": 5,
+    "col": 2,
+    "website": "https://www.ansible.com",
+    "details": "Configuration management and automation."
+  },
+  {
+    "atomic": 17,
+    "symbol": "DK",
     "name": "Docker",
-    "category": "Containerization",
-    "row": 3,
-    "col": 5,
-    "color": "#FF9800",
-    "description": "Platform for containerized applications.",
-    "website": "https://docker.com"
+    "category": "Containers",
+    "row": 5,
+    "col": 13,
+    "website": "https://www.docker.com",
+    "details": "Containerization platform for apps and services."
   },
   {
-    "symbol": "KU",
+    "atomic": 18,
+    "symbol": "KS",
     "name": "Kubernetes",
-    "category": "Container Orchestration",
-    "row": 3,
-    "col": 6,
-    "color": "#FF9800",
-    "description": "Orchestration for containerized workloads.",
-    "website": "https://kubernetes.io"
+    "category": "Containers",
+    "row": 5,
+    "col": 14,
+    "website": "https://kubernetes.io",
+    "details": "Container orchestration platform."
+  },
+  {
+    "atomic": 19,
+    "symbol": "VA",
+    "name": "HashiCorp Vault",
+    "category": "Secrets Management",
+    "row": 6,
+    "col": 1,
+    "website": "https://www.vaultproject.io",
+    "details": "Secrets storage, encryption, and access control."
+  },
+  {
+    "atomic": 20,
+    "symbol": "GK",
+    "name": "Gitleaks",
+    "category": "Secrets Management",
+    "row": 6,
+    "col": 2,
+    "website": "https://github.com/gitleaks/gitleaks",
+    "details": "Detect secrets in repositories and commits."
+  },
+  {
+    "atomic": 21,
+    "symbol": "DC",
+    "name": "Dependency-Check",
+    "category": "Security Testing",
+    "row": 6,
+    "col": 13,
+    "website": "https://owasp.org/www-project-dependency-check/",
+    "details": "Scan dependencies for known vulnerabilities."
+  },
+  {
+    "atomic": 22,
+    "symbol": "CS",
+    "name": "Checkmarx",
+    "category": "Security Testing",
+    "row": 6,
+    "col": 14,
+    "website": "https://checkmarx.com",
+    "details": "Application security testing platform."
+  },
+  {
+    "atomic": 23,
+    "symbol": "VF",
+    "name": "Veracode",
+    "category": "Security Testing",
+    "row": 7,
+    "col": 1,
+    "website": "https://www.veracode.com",
+    "details": "Cloud-based application security testing."
+  },
+  {
+    "atomic": 24,
+    "symbol": "HF",
+    "name": "Fortify",
+    "category": "Security Testing",
+    "row": 7,
+    "col": 2,
+    "website": "https://www.opentext.com/products/fortify",
+    "details": "Static and dynamic application security testing."
+  },
+  {
+    "atomic": 25,
+    "symbol": "DP",
+    "name": "Datadog",
+    "category": "Monitoring",
+    "row": 7,
+    "col": 13,
+    "website": "https://www.datadoghq.com",
+    "details": "Observability, logs, and performance monitoring."
+  },
+  {
+    "atomic": 26,
+    "symbol": "DY",
+    "name": "Dynatrace",
+    "category": "Monitoring",
+    "row": 7,
+    "col": 14,
+    "website": "https://www.dynatrace.com",
+    "details": "Monitoring, tracing, and application intelligence."
+  },
+  {
+    "atomic": 27,
+    "symbol": "SP",
+    "name": "Splunk",
+    "category": "Monitoring",
+    "row": 8,
+    "col": 1,
+    "website": "https://www.splunk.com",
+    "details": "Search, analysis, and observability platform."
+  },
+  {
+    "atomic": 28,
+    "symbol": "PR",
+    "name": "Prometheus",
+    "category": "Monitoring",
+    "row": 8,
+    "col": 2,
+    "website": "https://prometheus.io",
+    "details": "Metrics-based monitoring and alerting."
+  },
+  {
+    "atomic": 29,
+    "symbol": "GF",
+    "name": "Grafana",
+    "category": "Monitoring",
+    "row": 8,
+    "col": 13,
+    "website": "https://grafana.com",
+    "details": "Dashboards and visualization for observability."
+  },
+  {
+    "atomic": 30,
+    "symbol": "EL",
+    "name": "Elastic",
+    "category": "Monitoring",
+    "row": 8,
+    "col": 14,
+    "website": "https://www.elastic.co",
+    "details": "Search and observability platform."
   }
 ]
