@@ -1,42 +1,41 @@
 [
   { "symbol": "GH", "name": "GitHub", "category": "Source Control", "row": 1, "col": 1, "color": "#4CAF50", "description": "Version control and collaboration using Git.", "website": "https://github.com" },
   { "symbol": "GL", "name": "GitLab", "category": "Source Control", "row": 1, "col": 18, "color": "#4CAF50", "description": "DevOps platform with Git repositories, CI/CD, and security.", "website": "https://gitlab.com" },
-
   { "symbol": "BB", "name": "Bitbucket", "category": "Source Control", "row": 2, "col": 1, "color": "#4CAF50", "description": "Git repository management for teams.", "website": "https://bitbucket.org" },
-  { "symbol": "JN", "name": "Jenkins", "category": "CI/CD", "row": 2, "col": 18, "color": "#2196F3", "description": "Automation server for building, testing, and deploying.", "website": "https://www.jenkins.io" },
 
-  { "symbol": "TR", "name": "Travis CI", "category": "CI/CD", "row": 3, "col": 1, "color": "#2196F3", "description": "Hosted CI service for GitHub projects.", "website": "https://travis-ci.org" },
-  { "symbol": "CC", "name": "CircleCI", "category": "CI/CD", "row": 3, "col": 18, "color": "#2196F3", "description": "Modern CI/CD platform.", "website": "https://circleci.com" },
+  { "symbol": "DO", "name": "Docker", "category": "Containerization", "row": 3, "col": 5, "color": "#FF9800", "description": "Platform for containerized applications.", "website": "https://docker.com" },
+  { "symbol": "KU", "name": "Kubernetes", "category": "Container Orchestration", "row": 3, "col": 6, "color": "#FF9800", "description": "Orchestration for containerized workloads.", "website": "https://kubernetes.io" },
+  { "symbol": "OC", "name": "OpenShift", "category": "Container Orchestration", "row": 3, "col": 7, "color": "#FF9800", "description": "Enterprise Kubernetes platform.", "website": "https://openshift.com" },
 
-  { "symbol": "DO", "name": "Docker", "category": "Containerization", "row": 4, "col": 1, "color": "#FF9800", "description": "Platform for developing and running applications in containers.", "website": "https://www.docker.com" },
-  { "symbol": "KC", "name": "Kubernetes", "category": "Container Orchestration", "row": 4, "col": 10, "color": "#FFC107", "description": "System for automating deployment and scaling of containers.", "website": "https://kubernetes.io" },
-  { "symbol": "OS", "name": "OpenShift", "category": "Container Orchestration", "row": 4, "col": 18, "color": "#FFC107", "description": "Enterprise Kubernetes platform by Red Hat.", "website": "https://www.openshift.com" },
+  { "symbol": "JF", "name": "JFrog Artifactory", "category": "Artifact Repository", "row": 4, "col": 2, "color": "#9C27B0", "description": "Universal artifact repository manager.", "website": "https://jfrog.com/artifactory" },
+  { "symbol": "NV", "name": "Nexus", "category": "Artifact Repository", "row": 4, "col": 3, "color": "#9C27B0", "description": "Repository manager for binaries and builds.", "website": "https://sonatype.com/nexus" },
 
-  { "symbol": "TF", "name": "Terraform", "category": "Infrastructure as Code", "row": 5, "col": 1, "color": "#9C27B0", "description": "Tool for building and versioning infrastructure.", "website": "https://www.terraform.io" },
-  { "symbol": "PL", "name": "Pulumi", "category": "Infrastructure as Code", "row": 5, "col": 18, "color": "#9C27B0", "description": "Infrastructure as code using real programming languages.", "website": "https://www.pulumi.com" },
+  { "symbol": "JE", "name": "Jenkins", "category": "CI/CD", "row": 5, "col": 4, "color": "#2196F3", "description": "Automation server for CI/CD pipelines.", "website": "https://jenkins.io" },
+  { "symbol": "TR", "name": "Travis CI", "category": "CI/CD", "row": 5, "col": 5, "color": "#2196F3", "description": "Continuous integration service for GitHub projects.", "website": "https://travis-ci.org" },
+  { "symbol": "CI", "name": "CircleCI", "category": "CI/CD", "row": 5, "col": 6, "color": "#2196F3", "description": "CI/CD platform for fast builds.", "website": "https://circleci.com" },
+  { "symbol": "AZP", "name": "Azure Pipelines", "category": "CI/CD", "row": 5, "col": 7, "color": "#2196F3", "description": "Microsoft Azure DevOps CI/CD pipelines.", "website": "https://azure.microsoft.com/services/devops/pipelines" },
 
-  { "symbol": "AN", "name": "Ansible", "category": "Configuration Management", "row": 6, "col": 1, "color": "#673AB7", "description": "Automation tool for configuration and deployment.", "website": "https://www.ansible.com" },
-  { "symbol": "CF", "name": "Chef", "category": "Configuration Management", "row": 6, "col": 10, "color": "#673AB7", "description": "Automation platform for infrastructure management.", "website": "https://www.chef.io" },
-  { "symbol": "PV", "name": "Puppet", "category": "Configuration Management", "row": 6, "col": 18, "color": "#673AB7", "description": "Configuration management tool for automating IT.", "website": "https://puppet.com" },
+  { "symbol": "AN", "name": "Ansible", "category": "Configuration Management", "row": 6, "col": 8, "color": "#795548", "description": "Automation tool for configuration management.", "website": "https://ansible.com" },
+  { "symbol": "CH", "name": "Chef", "category": "Configuration Management", "row": 6, "col": 9, "color": "#795548", "description": "Infrastructure automation platform.", "website": "https://chef.io" },
+  { "symbol": "PU", "name": "Puppet", "category": "Configuration Management", "row": 6, "col": 10, "color": "#795548", "description": "Automation for managing infrastructure.", "website": "https://puppet.com" },
+  { "symbol": "TF", "name": "Terraform", "category": "Infrastructure as Code", "row": 6, "col": 11, "color": "#795548", "description": "Infrastructure provisioning tool.", "website": "https://terraform.io" },
 
-  { "symbol": "VA", "name": "Vault", "category": "Secrets Management", "row": 7, "col": 1, "color": "#E91E63", "description": "Tool for managing secrets and protecting sensitive data.", "website": "https://www.vaultproject.io" },
-  { "symbol": "CA", "name": "CyberArk", "category": "Secrets Management", "row": 7, "col": 18, "color": "#E91E63", "description": "Privileged access security solution.", "website": "https://www.cyberark.com" },
+  { "symbol": "AW", "name": "AWS", "category": "Cloud Provider", "row": 12, "col": 5, "color": "#3F51B5", "description": "Amazon Web Services cloud platform.", "website": "https://aws.amazon.com" },
+  { "symbol": "AZ", "name": "Azure", "category": "Cloud Provider", "row": 12, "col": 10, "color": "#3F51B5", "description": "Cloud computing services by Microsoft.", "website": "https://azure.microsoft.com" },
+  { "symbol": "GCP", "name": "Google Cloud", "category": "Cloud Provider", "row": 12, "col": 18, "color": "#3F51B5", "description": "Google Cloud Platform services.", "website": "https://cloud.google.com" },
 
-  { "symbol": "PR", "name": "Prometheus", "category": "Monitoring", "row": 8, "col": 1, "color": "#00BCD4", "description": "Monitoring system and time series database.", "website": "https://prometheus.io" },
-  { "symbol": "GF", "name": "Grafana", "category": "Monitoring", "row": 8, "col": 10, "color": "#00BCD4", "description": "Analytics and monitoring visualization tool.", "website": "https://grafana.com" },
-  { "symbol": "EL", "name": "Elastic", "category": "Monitoring", "row": 8, "col": 18, "color": "#00BCD4", "description": "Search and observability platform.", "website": "https://www.elastic.co" },
+  { "symbol": "SP", "name": "Splunk", "category": "Monitoring & Logging", "row": 13, "col": 6, "color": "#009688", "description": "Operational intelligence and log management.", "website": "https://splunk.com" },
+  { "symbol": "PR", "name": "Prometheus", "category": "Monitoring & Logging", "row": 13, "col": 7, "color": "#009688", "description": "Monitoring system and time series database.", "website": "https://prometheus.io" },
+  { "symbol": "GF", "name": "Grafana", "category": "Monitoring & Logging", "row": 13, "col": 8, "color": "#009688", "description": "Analytics and monitoring dashboards.", "website": "https://grafana.com" },
 
-  { "symbol": "SQ", "name": "SonarQube", "category": "Testing Automation", "row": 9, "col": 1, "color": "#795548", "description": "Continuous inspection of code quality.", "website": "https://www.sonarqube.org" },
-  { "symbol": "CY", "name": "Cypress", "category": "Testing Automation", "row": 9, "col": 10, "color": "#795548", "description": "Fast, easy, reliable testing for web apps.", "website": "https://www.cypress.io" },
-  { "symbol": "SE", "name": "Selenium", "category": "Testing Automation", "row": 9, "col": 18, "color": "#795548", "description": "Framework for web browser automation.", "website": "https://www.selenium.dev" },
+  { "symbol": "SN", "name": "Snyk", "category": "Security", "row": 14, "col": 9, "color": "#E91E63", "description": "Security scanning for dependencies.", "website": "https://snyk.io" },
+  { "symbol": "AQ", "name": "Aqua Security", "category": "Security", "row": 14, "col": 10, "color": "#E91E63", "description": "Cloud native security platform.", "website": "https://aquasec.com" },
+  { "symbol": "TW", "name": "Twistlock", "category": "Security", "row": 14, "col": 11, "color": "#E91E63", "description": "Container security platform.", "website": "https://paloaltonetworks.com/cloud-native-security" },
 
-  { "symbol": "BS", "name": "Burp Suite", "category": "Security Testing", "row": 10, "col": 1, "color": "#F44336", "description": "Web vulnerability scanner and penetration testing tool.", "website": "https://portswigger.net/burp" },
-  { "symbol": "ZP", "name": "OWASP ZAP", "category": "Security Testing", "row": 10, "col": 10, "color": "#F44336", "description": "Open-source web application security scanner.", "website": "https://www.zaproxy.org" },
-  { "symbol": "NK", "name": "Nikto", "category": "Security Testing", "row": 10, "col": 18, "color": "#F44336", "description": "Web server scanner for vulnerabilities.", "website": "https://cirt.net/Nikto2" },
+  { "symbol": "SE", "name": "Selenium", "category": "Testing", "row": 15, "col": 12, "color": "#607D8B", "description": "Automated testing framework.", "website": "https://selenium.dev" },
+  { "symbol": "JU", "name": "JUnit", "category": "Testing", "row": 15, "col": 13, "color": "#607D8B", "description": "Java unit testing framework.", "website": "https://junit.org" },
+  { "symbol": "CU", "name": "Cucumber", "category": "Testing", "row": 15, "col": 14, "color": "#607D8B", "description": "Behavior-driven development testing tool.", "website": "https://cucumber.io" },
 
-  { "symbol": "NX", "name": "Nexus", "category": "Artifact Management", "row": 11, "col": 1, "color": "#607D8B", "description": "Repository manager for artifacts.", "website": "https://www.sonatype.com/nexus" },
-  { "symbol": "JF", "name": "JFrog Artifactory", "category": "Artifact Management", "row": 11, "col": 10, "color": "#607D8B", "description": "Universal artifact repository manager.", "website": "https://jfrog.com/artifactory" },
-
-  { "symbol": "AWS", "name": "Amazon Web Services", "category": "Cloud Provider", "row": 12, "col": 1, "color": "#3F51B5", "description": "Cloud computing services by Amazon.", "website": "https://aws.amazon.com" },
-  { "symbol": "AZR", "name": "Microsoft Azure", "category": "Cloud Provider", "row": 12, "col": 10, "color": "#3F51B5", "description": "Cloud computing services by Microsoft.", "website": "https://azure.microsoft.com" },
-  { "symbol": "GCP", "name": "Google Cloud", "category": "Cloud Provider", "row": 12, "col": 18, "color": "#3F51B5", "
+  { "symbol": "SL", "name": "Slack", "category": "Collaboration", "row": 16, "col": 15, "color": "#FF5722", "description": "Team communication platform.", "website": "https://slack.com" },
+  { "symbol": "MS", "name": "Microsoft Teams", "category": "Collaboration", "row": 16, "col": 16, "color": "#FF5722", "description": "Collaboration and communication tool.", "website": "https://teams.microsoft.com" },
+  { "symbol": "ZO", "name": "Zoom", "category": "Collaboration", "row": 16, "col": 17, "color":
