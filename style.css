@@ -161,18 +161,21 @@ body {
 }
 
 .name {
-  font-size: 0.46rem;
-  line-height: 1.05;
+  font-size: 0.42rem;
+  line-height: 1.08;
   opacity: 0.98;
   word-break: break-word;
   overflow-wrap: anywhere;
+  white-space: normal;
+  max-width: 100%;
   align-self: end;
   padding-right: 2px;
+  padding-top: 2px;
 }
 
 .badge {
-  font-size: 0.38rem;
-  line-height: 1;
+  font-size: 0.36rem;
+  line-height: 1.05;
   padding: 2px 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
@@ -180,10 +183,19 @@ body {
   position: absolute;
   top: 2px;
   right: 2px;
-  white-space: nowrap;
-  max-width: calc(100% - 4px);
+  white-space: normal;
+  max-width: 44px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: right;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
+}
+
+.periodic-table > .element:nth-last-child(-n+2) .badge {
+  max-width: 48px;
+  font-size: 0.33rem;
+  line-height: 1.05;
 }
 
 .placeholder {
@@ -261,11 +273,12 @@ body {
   }
 
   .name {
-    font-size: 0.43rem;
+    font-size: 0.4rem;
   }
 
   .badge {
-    font-size: 0.36rem;
+    font-size: 0.32rem;
+    max-width: 46px;
   }
 
   .element:hover {
