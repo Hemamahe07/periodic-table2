@@ -82,18 +82,20 @@ function render() {
   legend.querySelectorAll(".legend-item").forEach((el, i) => {
     const cat = categories[i];
     const isActive = active.has(cat);
+    const color = getColor(i);
     el.classList.toggle("active", isActive);
-    el.style.background = isActive ? getColor(i) : "#fff";
+    el.style.background = isActive ? color : "#fff";
     el.style.color = isActive ? "#fff" : "#102033";
-    el.style.borderColor = isActive ? getColor(i) : "var(--line)";
+    el.style.borderColor = isActive ? color : "var(--line)";
   });
 
   board.innerHTML = "";
 
   tools.forEach(tool => {
     const tile = document.createElement("div");
+    const idx = categories.indexOf(tool.cat);
     const isActive = active.has(tool.cat);
-    const color = getColor(categories.indexOf(tool.cat));
+    const color = idx >= 0 ? getColor(idx) : "#7b8ca4";
 
     tile.className = "tile";
     if (active.size && !isActive) tile.classList.add("dim");
