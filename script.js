@@ -1,143 +1,114 @@
-const categories = {
-  "Planning": "#3b82f6",
-  "Source Control": "#6366f1",
-  "CI/CD": "#22c55e",
-  "Code Quality": "#f59e0b",
-  "Security Testing": "#ef4444",
-  "Deployment": "#a855f7",
-  "IaC": "#14b8a6",
-  "Automation": "#0ea5e9",
-  "Containers": "#f97316",
-  "Secrets Management": "#ec4899",
-  "Monitoring": "#84cc16"
-};
+let tools = [];
+const activeCategories = new Set();
+let searchTerm = "";
+let viewMode = "all";
 
 const table = document.getElementById("table");
-const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
 const legend = document.getElementById("legend");
-const modalBackdrop = document.getElementById("modalBackdrop");
-const modalContent = document.getElementById("modalContent");
+const search = document.getElementById("search");
+const viewModeSelect = document.getElementById("viewMode");
+
+const modal = document.getElementById("detailModal");
 const closeModal = document.getElementById("closeModal");
+const detailTitle = document.getElementById("detailTitle");
+const detailCategory = document.getElementById("detailCategory");
+const detailShort = document.getElementById("detailShort");
+const detailLink = document.getElementById("detailLink");
 
-let elements = [];
+const normalize = s => (s || "").toString().toLowerCase().trim();
 
-function buildLegend() {
-  const uniqueCategories = [...new Set(elements.map(el => el.category))];
-  legend.innerHTML = "";
-  categoryFilter.innerHTML = `<option value="all">All Categories</option>`;
-
-  uniqueCategories.forEach(category => {
-    const legendItem = document.createElement("div");
-    legendItem.className = "legend-item";
-    legendItem.innerHTML = `
-      <span class="swatch" style="background:${categories[category] || "#999"}"></span>
+function renderLegend() {
+  const cats = [...new Map(tools.map(t => [t.category, t.color])).entries()];
+  legend.innerHTML = cats.map(([category, color]) => `
+    <div class="legend-item ${activeCategories.has(category) ? "active" : ""}" data-category="${category}">
+      <span class="swatch" style="background:${color}"></span>
       <span>${category}</span>
-    `;
-    legend.appendChild(legendItem);
+    </div>
+  `).join("");
 
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    categoryFilter.appendChild(option);
+  legend.querySelectorAll(".legend-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const cat = item.dataset.category;
+      if (activeCategories.has(cat)) activeCategories.delete(cat);
+      else activeCategories.add(cat);
+      renderLegend();
+      renderTable();
+    });
   });
 }
 
-function openModal(el) {
-  modalContent.innerHTML = `
-    <h2>${el.name}</h2>
-    <p class="meta"><strong>Symbol:</strong> ${el.symbol}</p>
-    <p class="meta"><strong>Atomic No:</strong> ${el.atomic}</p>
-    <p class="meta"><strong>Category:</strong> ${el.category}</p>
-    <p class="meta"><strong>Position:</strong> Row ${el.row}, Col ${el.col}</p>
-    <p class="meta">${el.details || ""}</p>
-    ${
-      el.website
-        ? `<p class="meta"><strong>Website:</strong> <a href="${el.website}" target="_blank" rel="noopener noreferrer">${el.website}</a></p>`
-        : ""
-    }
-  `;
-  modalBackdrop.classList.remove("hidden");
-}
-
-function createPlaceholder(row, col) {
-  const box = document.createElement("div");
-  box.className = "placeholder";
-  box.style.gridRow = String(row);
-  box.style.gridColumn = String(col);
-  return box;
+function isMatch(tool) {
+  const q = normalize(searchTerm);
+  const text = normalize(`${tool.name} ${tool.short} ${tool.category}`);
+  const searchOk = !q || text.includes(q);
+  const categoryOk = activeCategories.size === 0 || activeCategories.has(tool.category);
+  return searchOk && categoryOk;
 }
 
 function renderTable() {
-  const q = searchInput.value.trim().toLowerCase();
-  const selectedCategory = categoryFilter.value;
-  table.innerHTML = "";
+  table.innerHTML = tools.map(tool => {
+    const selected = activeCategories.has(tool.category);
+    const match = isMatch(tool);
+    const dimClass = (viewMode === "dim" && activeCategories.size > 0 && !selected) ? "dimmed" : "";
+    const hideClass = (viewMode === "selected" && activeCategories.size > 0 && !selected) ? "hidden" : "";
+    const shouldShow = searchTerm ? match : true;
+    const finalHidden = !shouldShow ? "hidden" : hideClass;
 
-  const visible = elements.filter(el => {
-    const textMatch =
-      el.name.toLowerCase().includes(q) ||
-      el.symbol.toLowerCase().includes(q) ||
-      String(el.atomic).includes(q) ||
-      (el.category || "").toLowerCase().includes(q) ||
-      (el.details || "").toLowerCase().includes(q);
-
-    const categoryMatch = selectedCategory === "all" || el.category === selectedCategory;
-    return textMatch && categoryMatch;
-  });
-
-  const used = new Set(visible.map(el => `${el.row}-${el.col}`));
-
-  for (let r = 1; r <= 4; r++) {
-    for (let c = 1; c <= 18; c++) {
-      if (!used.has(`${r}-${c}`)) {
-        table.appendChild(createPlaceholder(r, c));
-      }
-    }
-  }
-
-  visible.forEach(el => {
-    const card = document.createElement("div");
-    card.className = "element";
-    card.style.gridRow = String(el.row);
-    card.style.gridColumn = String(el.col);
-    card.style.background = categories[el.category] || "#64748b";
-    card.innerHTML = `
-      <div class="badge">${el.category}</div>
-      <div class="atomic">${el.atomic}</div>
-      <div class="symbol">${el.symbol}</div>
-      <div class="name">${el.name}</div>
+    return `
+      <article
+        class="element ${finalHidden} ${dimClass} ${selected ? "selected" : ""}"
+        style="grid-column:${tool.col}; grid-row:${tool.row}; background:${tool.color};"
+        data-id="${tool.id}"
+        data-category="${tool.category}"
+      >
+        <div class="atomic">${tool.id}</div>
+        <div class="symbol">${tool.short}</div>
+        <div class="name">${tool.name}</div>
+        <div class="badge">${tool.category}</div>
+      </article>
     `;
-    card.addEventListener("click", () => openModal(el));
-    table.appendChild(card);
+  }).join("");
+
+  table.querySelectorAll(".element").forEach(el => {
+    el.addEventListener("click", () => {
+      const tool = tools.find(t => String(t.id) === el.dataset.id);
+      if (!tool) return;
+      detailTitle.textContent = tool.name;
+      detailCategory.textContent = tool.category;
+      detailShort.textContent = `${tool.short} • Tile ${tool.id}`;
+      detailLink.href = tool.url;
+      modal.classList.remove("hidden");
+    });
   });
 }
 
-async function init() {
-  try {
-    const response = await fetch("elements.json");
-    if (!response.ok) throw new Error("Failed to load elements.json");
-    elements = await response.json();
-    buildLegend();
+function closeDetail() {
+  modal.classList.add("hidden");
+}
+
+search.addEventListener("input", e => {
+  searchTerm = e.target.value;
+  renderTable();
+});
+
+viewModeSelect.addEventListener("change", e => {
+  viewMode = e.target.value;
+  renderTable();
+});
+
+closeModal.addEventListener("click", closeDetail);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeDetail();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeDetail();
+});
+
+fetch("elements.json")
+  .then(r => r.json())
+  .then(data => {
+    tools = data;
+    renderLegend();
     renderTable();
-  } catch (error) {
-    table.innerHTML = `
-      <div style="grid-column:1 / -1; color:#fff; padding:20px; background:#b91c1c; border-radius:12px;">
-        Could not load elements.json. Make sure it is in the same folder as index.html.
-      </div>
-    `;
-    console.error(error);
-  }
-}
-
-searchInput.addEventListener("input", renderTable);
-categoryFilter.addEventListener("change", renderTable);
-
-closeModal.addEventListener("click", () => {
-  modalBackdrop.classList.add("hidden");
-});
-
-modalBackdrop.addEventListener("click", e => {
-  if (e.target === modalBackdrop) modalBackdrop.classList.add("hidden");
-});
-
-init();
+  });
