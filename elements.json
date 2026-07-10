@@ -40,7 +40,7 @@
     { "n": 18, "s": "Mo", "name": "MongoDB", "cat": "Database Management", "r": 2, "c": 8 },
     { "n": 19, "s": "Sq", "name": "SQL Server", "cat": "Database Management", "r": 2, "c": 9 },
     { "n": 20, "s": "Oc", "name": "Octopus", "cat": "Release Management", "r": 2, "c": 10 },
-    { "n": 21, "s": "Te", "name": "TestRail", "cat": "Testing", "r": 3, "c": 1 },
+    { "n": 21, "s": "Ts", "name": "TestRail", "cat": "Testing", "r": 3, "c": 1 },
     { "n": 22, "s": "Je", "name": "Jenkins", "cat": "Continuous Integration", "r": 3, "c": 2 },
     { "n": 23, "s": "Tr", "name": "Travis CI", "cat": "Continuous Integration", "r": 3, "c": 3 },
     { "n": 24, "s": "Ci", "name": "CircleCI", "cat": "Continuous Integration", "r": 3, "c": 4 },
