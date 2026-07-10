@@ -38,7 +38,6 @@
     { "n": 16, "s": "Vc", "name": "Veracode", "cat": "Security", "r": 1, "c": 16 },
     { "n": 17, "s": "Bi", "name": "BMC Helix ITSM", "cat": "IT Service Management", "r": 1, "c": 17 },
     { "n": 18, "s": "Gls", "name": "GitLab SCM", "cat": "Source Control Management", "r": 1, "c": 18 },
-
     { "n": 19, "s": "Aj", "name": "Atlassian Jira", "cat": "Enterprise Agile Planning", "r": 2, "c": 1 },
     { "n": 20, "s": "Dd", "name": "Datadog", "cat": "Value Stream Management", "r": 2, "c": 2 },
     { "n": 21, "s": "Bp", "name": "Big Panda", "cat": "Value Stream Management", "r": 2, "c": 3 },
@@ -57,7 +56,6 @@
     { "n": 34, "s": "Sy", "name": "Snyk", "cat": "Security", "r": 2, "c": 16 },
     { "n": 35, "s": "Pd", "name": "PagerDuty", "cat": "IT Service Management", "r": 2, "c": 17 },
     { "n": 36, "s": "Abb", "name": "Atlassian Bitbucket", "cat": "Source Control Management", "r": 2, "c": 18 },
-
     { "n": 37, "s": "Sp", "name": "Splunk", "cat": "Value Stream Management", "r": 3, "c": 1 },
     { "n": 38, "s": "Ad", "name": "AppDynamics", "cat": "Value Stream Management", "r": 3, "c": 2 },
     { "n": 39, "s": "Kb", "name": "Kibana", "cat": "Value Stream Management", "r": 3, "c": 3 },
@@ -76,7 +74,6 @@
     { "n": 52, "s": "Ff", "name": "Micro Focus Fortify SCA", "cat": "Security", "r": 3, "c": 16 },
     { "n": 53, "s": "Azf", "name": "Azure Functions", "cat": "Public Cloud", "r": 3, "c": 17 },
     { "n": 54, "s": "Ci", "name": "Compuware ISPW", "cat": "Release Management", "r": 3, "c": 18 },
-
     { "n": 55, "s": "Dt", "name": "Dynatrace", "cat": "Value Stream Management", "r": 4, "c": 1 },
     { "n": 56, "s": "Nr", "name": "New Relic", "cat": "Value Stream Management", "r": 4, "c": 2 },
     { "n": 57, "s": "Dh", "name": "Docker Hub", "cat": "Artifact/Package Management", "r": 4, "c": 3 },
@@ -95,7 +92,6 @@
     { "n": 70, "s": "Cx", "name": "Checkmarx SAST", "cat": "Security", "r": 4, "c": 16 },
     { "n": 71, "s": "He", "name": "Heroku", "cat": "PaaS/Container Service", "r": 4, "c": 17 },
     { "n": 72, "s": "Al", "name": "AWS Lambda", "cat": "Public Cloud", "r": 4, "c": 18 },
-
     { "n": 73, "s": "Gr", "name": "Grafana", "cat": "Value Stream Management", "r": 5, "c": 1 },
     { "n": 74, "s": "El", "name": "Elastic ELK Stack", "cat": "Value Stream Management", "r": 5, "c": 2 },
     { "n": 75, "s": "Yn", "name": "Yarn", "cat": "Artifact/Package Management", "r": 5, "c": 3 },
@@ -114,7 +110,6 @@
     { "n": 88, "s": "Pbs", "name": "PortSwigger Burp Suite", "cat": "Security", "r": 5, "c": 16 },
     { "n": 89, "s": "Gf", "name": "Google Firebase", "cat": "Public Cloud", "r": 5, "c": 17 },
     { "n": 90, "s": "Cf", "name": "Cloud Foundry", "cat": "PaaS/Container Service", "r": 5, "c": 18 },
-
     { "n": 91, "s": "Jn", "name": "Jenkins", "cat": "Continuous Integration", "r": 6, "c": 1 },
     { "n": 92, "s": "Azc", "name": "Azure DevOps Code", "cat": "Continuous Integration", "r": 6, "c": 2 },
     { "n": 93, "s": "Glc", "name": "GitLab CI", "cat": "Continuous Integration", "r": 6, "c": 3 },
@@ -133,7 +128,6 @@
     { "n": 106, "s": "Tt", "name": "Tricentis Tosca", "cat": "Testing", "r": 6, "c": 16 },
     { "n": 107, "s": "Se", "name": "Selenium", "cat": "Testing", "r": 6, "c": 17 },
     { "n": 108, "s": "Ju", "name": "JUnit", "cat": "Testing", "r": 6, "c": 18 },
-
     { "n": 109, "s": "Sl", "name": "Sauce Labs", "cat": "Testing", "r": 7, "c": 1 },
     { "n": 110, "s": "Ct", "name": "Compuware Topaz", "cat": "Developer Portal", "r": 7, "c": 2 },
     { "n": 111, "s": "Ap", "name": "Appium", "cat": "Testing", "r": 7, "c": 3 },
