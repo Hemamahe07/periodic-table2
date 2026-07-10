@@ -109,17 +109,8 @@ html,body{
   min-width:max-content;
 }
 
-.board{
-  margin-bottom:0;
-}
-
-.spacer{
-  height:28px;
-}
-
-.cell-empty{
-  visibility:hidden;
-}
+.spacer{ height:28px; }
+.cell-empty{ visibility:hidden; }
 
 .tile{
   position:relative;
@@ -211,9 +202,7 @@ html,body{
 }
 
 .modal.hidden,
-.overlay.hidden{
-  display:none;
-}
+.overlay.hidden{ display:none; }
 
 .close{
   position:sticky;
@@ -247,9 +236,7 @@ html,body{
   text-decoration:none;
 }
 
-.modal a:hover{
-  text-decoration:underline;
-}
+.modal a:hover{ text-decoration:underline; }
 
 .detail-grid{
   display:grid;
@@ -285,9 +272,7 @@ html,body{
     padding:18px 16px 10px;
   }
 
-  .topbar h1{
-    font-size:24px;
-  }
+  .topbar h1{ font-size:24px; }
 
   .legend{
     padding:8px 16px 14px;
@@ -327,13 +312,8 @@ html,body{
     margin-top:7px;
   }
 
-  .tile .name{
-    font-size:7.8px;
-  }
-
-  .tile .cat{
-    font-size:7px;
-  }
+  .tile .name{ font-size:7.8px; }
+  .tile .cat{ font-size:7px; }
 
   .modal{
     width:calc(100vw - 16px);
@@ -341,7 +321,5 @@ html,body{
     border-radius:18px;
   }
 
-  .modal h2{
-    font-size:22px;
-  }
+  .modal h2{ font-size:22px; }
 }
