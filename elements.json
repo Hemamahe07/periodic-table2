@@ -1,302 +1,34 @@
 [
-  {
-    "atomic": 1,
-    "symbol": "JI",
-    "name": "Jira",
-    "category": "Planning",
-    "row": 1,
-    "col": 1,
-    "website": "https://www.atlassian.com/software/jira",
-    "details": "Issue tracking, sprint planning, and workflow management."
-  },
-  {
-    "atomic": 2,
-    "symbol": "GH",
-    "name": "GitHub",
-    "category": "Source Control",
-    "row": 1,
-    "col": 18,
-    "website": "https://github.com",
-    "details": "Source control, collaboration, and code hosting."
-  },
-  {
-    "atomic": 3,
-    "symbol": "GL",
-    "name": "GitLab",
-    "category": "Source Control",
-    "row": 2,
-    "col": 1,
-    "website": "https://gitlab.com",
-    "details": "Repository hosting, CI/CD, and DevSecOps workflows."
-  },
-  {
-    "atomic": 4,
-    "symbol": "JN",
-    "name": "Jenkins",
-    "category": "CI/CD",
-    "row": 2,
-    "col": 2,
-    "website": "https://www.jenkins.io",
-    "details": "Automation server for build and delivery pipelines."
-  },
-  {
-    "atomic": 5,
-    "symbol": "SQ",
-    "name": "SonarQube",
-    "category": "Code Quality",
-    "row": 2,
-    "col": 13,
-    "website": "https://www.sonarsource.com/products/sonarqube/",
-    "details": "Static code analysis and quality gates."
-  },
-  {
-    "atomic": 6,
-    "symbol": "SK",
-    "name": "Snyk",
-    "category": "Security Testing",
-    "row": 2,
-    "col": 14,
-    "website": "https://snyk.io",
-    "details": "Dependency, container, and code security scanning."
-  },
-  {
-    "atomic": 7,
-    "symbol": "ZA",
-    "name": "OWASP ZAP",
-    "category": "Security Testing",
-    "row": 2,
-    "col": 15,
-    "website": "https://www.zaproxy.org",
-    "details": "Dynamic application security testing tool."
-  },
-  {
-    "atomic": 8,
-    "symbol": "TR",
-    "name": "Trivy",
-    "category": "Security Testing",
-    "row": 2,
-    "col": 16,
-    "website": "https://trivy.dev",
-    "details": "Vulnerability scanner for containers, filesystems, and IaC."
-  },
-  {
-    "atomic": 9,
-    "symbol": "GHA",
-    "name": "GitHub Actions",
-    "category": "CI/CD",
-    "row": 2,
-    "col": 17,
-    "website": "https://github.com/features/actions",
-    "details": "Workflow automation and build pipelines."
-  },
-  {
-    "atomic": 10,
-    "symbol": "GLC",
-    "name": "GitLab CI",
-    "category": "CI/CD",
-    "row": 2,
-    "col": 18,
-    "website": "https://docs.gitlab.com/ci/",
-    "details": "Integrated CI/CD for GitLab projects."
-  },
-  {
-    "atomic": 11,
-    "symbol": "AR",
-    "name": "Argo CD",
-    "category": "Deployment",
-    "row": 3,
-    "col": 1,
-    "website": "https://argo-cd.readthedocs.io",
-    "details": "GitOps continuous delivery for Kubernetes."
-  },
-  {
-    "atomic": 12,
-    "symbol": "OC",
-    "name": "OpenShift",
-    "category": "Deployment",
-    "row": 3,
-    "col": 2,
-    "website": "https://www.redhat.com/en/technologies/cloud-computing/openshift",
-    "details": "Enterprise Kubernetes platform."
-  },
-  {
-    "atomic": 13,
-    "symbol": "TK",
-    "name": "Tekton",
-    "category": "CI/CD",
-    "row": 3,
-    "col": 13,
-    "website": "https://tekton.dev",
-    "details": "Kubernetes-native CI/CD pipelines."
-  },
-  {
-    "atomic": 14,
-    "symbol": "TFC",
-    "name": "Terraform Cloud",
-    "category": "IaC",
-    "row": 3,
-    "col": 14,
-    "website": "https://www.hashicorp.com/products/terraform",
-    "details": "Infrastructure as code workflow and governance."
-  },
-  {
-    "atomic": 15,
-    "symbol": "TF",
-    "name": "Terraform",
-    "category": "IaC",
-    "row": 3,
-    "col": 15,
-    "website": "https://www.terraform.io",
-    "details": "Provision infrastructure as code."
-  },
-  {
-    "atomic": 16,
-    "symbol": "AN",
-    "name": "Ansible",
-    "category": "Automation",
-    "row": 3,
-    "col": 16,
-    "website": "https://www.ansible.com",
-    "details": "Configuration management and automation."
-  },
-  {
-    "atomic": 17,
-    "symbol": "DK",
-    "name": "Docker",
-    "category": "Containers",
-    "row": 3,
-    "col": 17,
-    "website": "https://www.docker.com",
-    "details": "Containerization platform for apps and services."
-  },
-  {
-    "atomic": 18,
-    "symbol": "KS",
-    "name": "Kubernetes",
-    "category": "Containers",
-    "row": 3,
-    "col": 18,
-    "website": "https://kubernetes.io",
-    "details": "Container orchestration platform."
-  },
-  {
-    "atomic": 19,
-    "symbol": "VA",
-    "name": "HashiCorp Vault",
-    "category": "Secrets Management",
-    "row": 4,
-    "col": 1,
-    "website": "https://www.vaultproject.io",
-    "details": "Secrets storage, encryption, and access control."
-  },
-  {
-    "atomic": 20,
-    "symbol": "GK",
-    "name": "Gitleaks",
-    "category": "Secrets Management",
-    "row": 4,
-    "col": 2,
-    "website": "https://github.com/gitleaks/gitleaks",
-    "details": "Detect secrets in repositories and commits."
-  },
-  {
-    "atomic": 21,
-    "symbol": "DC",
-    "name": "Dependency-Check",
-    "category": "Security Testing",
-    "row": 4,
-    "col": 3,
-    "website": "https://owasp.org/www-project-dependency-check/",
-    "details": "Scan dependencies for known vulnerabilities."
-  },
-  {
-    "atomic": 22,
-    "symbol": "CX",
-    "name": "Checkmarx",
-    "category": "Security Testing",
-    "row": 4,
-    "col": 4,
-    "website": "https://checkmarx.com",
-    "details": "Application security testing platform."
-  },
-  {
-    "atomic": 23,
-    "symbol": "VC",
-    "name": "Veracode",
-    "category": "Security Testing",
-    "row": 4,
-    "col": 5,
-    "website": "https://www.veracode.com",
-    "details": "Cloud-based application security testing."
-  },
-  {
-    "atomic": 24,
-    "symbol": "FT",
-    "name": "Fortify",
-    "category": "Security Testing",
-    "row": 4,
-    "col": 6,
-    "website": "https://www.opentext.com/products/fortify",
-    "details": "Static and dynamic application security testing."
-  },
-  {
-    "atomic": 25,
-    "symbol": "DG",
-    "name": "Datadog",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 7,
-    "website": "https://www.datadoghq.com",
-    "details": "Observability, logs, and performance monitoring."
-  },
-  {
-    "atomic": 26,
-    "symbol": "DT",
-    "name": "Dynatrace",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 8,
-    "website": "https://www.dynatrace.com",
-    "details": "Monitoring, tracing, and application intelligence."
-  },
-  {
-    "atomic": 27,
-    "symbol": "SP",
-    "name": "Splunk",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 9,
-    "website": "https://www.splunk.com",
-    "details": "Search, analysis, and observability platform."
-  },
-  {
-    "atomic": 28,
-    "symbol": "PR",
-    "name": "Prometheus",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 10,
-    "website": "https://prometheus.io",
-    "details": "Metrics-based monitoring and alerting."
-  },
-  {
-    "atomic": 29,
-    "symbol": "GF",
-    "name": "Grafana",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 11,
-    "website": "https://grafana.com",
-    "details": "Dashboards and visualization for observability."
-  },
-  {
-    "atomic": 30,
-    "symbol": "EL",
-    "name": "Elastic",
-    "category": "Monitoring",
-    "row": 4,
-    "col": 12,
-    "website": "https://www.elastic.co",
-    "details": "Search and observability platform."
-  }
+  { "id": 1, "row": 1, "col": 1, "short": "Aj", "name": "Atlassian Jira", "category": "Issue Tracking / ITSM", "type": "h", "color": "#2E86DE", "url": "https://www.atlassian.com/software/jira" },
+  { "id": 2, "row": 1, "col": 2, "short": "Gh", "name": "GitHub", "category": "Source Control Management", "type": "h", "color": "#6C5CE7", "url": "https://github.com" },
+  { "id": 3, "row": 1, "col": 3, "short": "Azp", "name": "Azure DevOps Pipelines", "category": "CI / CD Orchestration", "type": "v", "color": "#0984E3", "url": "https://azure.microsoft.com/products/devops" },
+  { "id": 4, "row": 1, "col": 4, "short": "Owasp", "name": "OWASP ZAP", "category": "Security Testing", "type": "h", "color": "#E17055", "url": "https://www.zaproxy.org" },
+  { "id": 5, "row": 1, "col": 5, "short": "Dap", "name": "Digital.ai App Protection", "category": "Runtime Security", "type": "v", "color": "#D63031", "url": "https://digital.ai" },
+  { "id": 6, "row": 1, "col": 6, "short": "Ck", "name": "CyberArk Conjur", "category": "Secrets Management", "type": "v", "color": "#00B894", "url": "https://www.cyberark.com" },
+  { "id": 7, "row": 1, "col": 7, "short": "Sw", "name": "ServiceNow", "category": "Issue Tracking / ITSM", "type": "h", "color": "#2C3E50", "url": "https://www.servicenow.com" },
+  { "id": 8, "row": 1, "col": 8, "short": "Pv", "name": "Planview", "category": "Enterprise Agile Planning", "type": "h", "color": "#8E44AD", "url": "https://www.planview.com" },
+  { "id": 9, "row": 1, "col": 9, "short": "Br", "name": "Broadcom Rally", "category": "Enterprise Agile Planning", "type": "h", "color": "#9B59B6", "url": "https://www.broadcom.com" },
+  { "id": 10, "row": 1, "col": 10, "short": "Dad", "name": "Digital.ai Deploy", "category": "Deployment", "type": "v", "color": "#F39C12", "url": "https://digital.ai" },
+
+  { "id": 11, "row": 2, "col": 1, "short": "Sni", "name": "Sonatype Nexus IQ", "category": "Artifact / Package Management", "type": "h", "color": "#E67E22", "url": "https://www.sonatype.com" },
+  { "id": 12, "row": 2, "col": 2, "short": "Aq", "name": "Aqua Security", "category": "Runtime Security", "type": "v", "color": "#C0392B", "url": "https://www.aquasec.com" },
+  { "id": 13, "row": 2, "col": 3, "short": "Vc", "name": "Veracode", "category": "Security Testing", "type": "h", "color": "#E74C3C", "url": "https://www.veracode.com" },
+  { "id": 14, "row": 2, "col": 4, "short": "Bi", "name": "BMC Helix ITSM", "category": "Issue Tracking / ITSM", "type": "h", "color": "#34495E", "url": "https://www.bmc.com" },
+  { "id": 15, "row": 2, "col": 5, "short": "Gls", "name": "GitLab SCM", "category": "Source Control Management", "type": "h", "color": "#FCA326", "url": "https://about.gitlab.com" },
+  { "id": 16, "row": 2, "col": 6, "short": "Dd", "name": "Datadog", "category": "Observability / AIOps", "type": "h", "color": "#4ECDC4", "url": "https://www.datadoghq.com" },
+  { "id": 17, "row": 2, "col": 7, "short": "Bp", "name": "BigPanda", "category": "Observability / AIOps", "type": "h", "color": "#16A085", "url": "https://www.bigpanda.io" },
+  { "id": 18, "row": 2, "col": 8, "short": "In", "name": "Instana", "category": "Observability / AIOps", "type": "h", "color": "#1ABC9C", "url": "https://www.ibm.com/products/instana" },
+  { "id": 19, "row": 2, "col": 9, "short": "Acp", "name": "AWS CodePipeline", "category": "CI / CD Orchestration", "type": "v", "color": "#3498DB", "url": "https://aws.amazon.com/codepipeline" },
+  { "id": 20, "row": 2, "col": 10, "short": "Mt", "name": "Microsoft Teams", "category": "Collaboration", "type": "h", "color": "#5B6CFF", "url": "https://www.microsoft.com/microsoft-teams" },
+
+  { "id": 21, "row": 3, "col": 1, "short": "Rha", "name": "Red Hat Ansible", "category": "Configuration Automation", "type": "v", "color": "#FF7675", "url": "https://www.redhat.com/en/ansible-collaborative" },
+  { "id": 22, "row": 3, "col": 2, "short": "Ht", "name": "HashiCorp Terraform", "category": "Infrastructure as Code", "type": "v", "color": "#7F8C8D", "url": "https://www.terraform.io" },
+  { "id": 23, "row": 3, "col": 3, "short": "Dk", "name": "Docker", "category": "Container Orchestration", "type": "v", "color": "#0984E3", "url": "https://www.docker.com" },
+  { "id": 24, "row": 3, "col": 4, "short": "Rho", "name": "Red Hat OpenShift", "category": "Container Orchestration", "type": "v", "color": "#D35400", "url": "https://www.redhat.com/en/technologies/cloud-computing/openshift" },
+  { "id": 25, "row": 3, "col": 5, "short": "Lb", "name": "Liquibase", "category": "Database Management", "type": "h", "color": "#27AE60", "url": "https://www.liquibase.com" },
+  { "id": 26, "row": 3, "col": 6, "short": "Dp", "name": "Delphix", "category": "Database Management", "type": "h", "color": "#2ECC71", "url": "https://www.delphix.com" },
+  { "id": 27, "row": 3, "col": 7, "short": "Ud", "name": "UrbanCode Deploy", "category": "Deployment", "type": "v", "color": "#F39C12", "url": "https://www.ibm.com/products/urbancode-deploy" },
+  { "id": 28, "row": 3, "col": 8, "short": "Hv", "name": "HashiCorp Vault", "category": "Secrets Management", "type": "v", "color": "#00B894", "url": "https://www.vaultproject.io" },
+  { "id": 29, "row": 3, "col": 9, "short": "Pd", "name": "PagerDuty", "category": "Incident Management", "type": "h", "color": "#E84393", "url": "https://www.pagerduty.com" },
+  { "id": 30, "row": 3, "col": 10, "short": "Abb", "name": "Atlassian Bitbucket", "category": "Source Control Management", "type": "h", "color": "#205081", "url": "https://bitbucket.org" }
 ]
