@@ -44,7 +44,6 @@ function buildLegend() {
     b.className = "legend-item";
     b.type = "button";
     b.textContent = cat;
-    b.dataset.cat = cat;
     b.style.setProperty("--cat-color", getColor(i));
     b.onclick = () => {
       if (active.has(cat)) active.delete(cat);
@@ -55,11 +54,31 @@ function buildLegend() {
   });
 }
 
-function openModal(tool) {
+function tileHtml(tool, color, activeState) {
+  return `
+    <div class="num">${tool.n}</div>
+    <div class="sym">${tool.s}</div>
+    <div class="name">${tool.name}</div>
+    <div class="cat">${tool.cat}</div>
+    <a class="link" href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.urlText}</a>
+  `;
+}
+
+function openModal(tool, color) {
   modalContent.innerHTML = `
     <h2 id="modalTitle">${tool.name}</h2>
     <p><strong>${tool.s}</strong> — ${tool.cat}</p>
     <p>Tile ${tool.n} is placed at row ${tool.r}, column ${tool.c}.</p>
+    <p>Link: <a href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.urlText}</a></p>
+
+    <div class="detail-grid">
+      <div class="detail-card"><strong>Symbol</strong>${tool.s}</div>
+      <div class="detail-card"><strong>Category</strong>${tool.cat}</div>
+      <div class="detail-card"><strong>Row</strong>${tool.r}</div>
+      <div class="detail-card"><strong>Column</strong>${tool.c}</div>
+      <div class="detail-card"><strong>Source</strong><a href="https://digital.ai/learn/devsecops-periodic-table/" target="_blank" rel="noopener noreferrer">Digital.ai periodic table</a></div>
+      <div class="detail-card"><strong>Related</strong><a href="https://digital.ai/learn/devsecops-periodic-table/learn-more/" target="_blank" rel="noopener noreferrer">Learn more</a></div>
+    </div>
   `;
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -91,38 +110,45 @@ function render() {
 
   board.innerHTML = "";
 
-  tools.forEach(tool => {
-    const tile = document.createElement("div");
-    const idx = categories.indexOf(tool.cat);
-    const isActive = active.has(tool.cat);
-    const color = idx >= 0 ? getColor(idx) : "#7b8ca4";
+  const maxRow = 7;
+  const cols = 18;
 
-    tile.className = "tile";
-    if (active.size && !isActive) tile.classList.add("dim");
+  for (let r = 1; r <= maxRow; r++) {
+    for (let c = 1; c <= cols; c++) {
+      const tool = tools.find(t => t.r === r && t.c === c);
+      if (!tool) {
+        const gap = document.createElement("div");
+        gap.className = "gap";
+        board.appendChild(gap);
+        continue;
+      }
 
-    tile.style.gridColumn = tool.c;
-    tile.style.gridRow = tool.r;
+      const tile = document.createElement("div");
+      const idx = categories.indexOf(tool.cat);
+      const isActive = active.has(tool.cat);
+      const color = idx >= 0 ? getColor(idx) : "#7b8ca4";
 
-    if (isActive) {
-      tile.style.background = color;
-      tile.style.borderColor = color;
-      tile.style.color = "#fff";
-    } else {
-      tile.style.background = "var(--panel-2)";
-      tile.style.borderColor = "var(--line)";
-      tile.style.color = "var(--ink)";
+      tile.className = "tile";
+      if (active.size && !isActive) tile.classList.add("dim");
+
+      tile.style.gridColumn = c;
+      tile.style.gridRow = r;
+
+      if (isActive) {
+        tile.style.background = color;
+        tile.style.borderColor = color;
+        tile.style.color = "#fff";
+      } else {
+        tile.style.background = "var(--panel-2)";
+        tile.style.borderColor = "var(--line)";
+        tile.style.color = "var(--ink)";
+      }
+
+      tile.innerHTML = tileHtml(tool, color, isActive);
+      tile.onclick = () => openModal(tool, color);
+      board.appendChild(tile);
     }
-
-    tile.innerHTML = `
-      <div class="num">${tool.n}</div>
-      <div class="sym">${tool.s}</div>
-      <div class="name">${tool.name}</div>
-      <div class="cat">${tool.cat}</div>
-    `;
-
-    tile.onclick = () => openModal(tool);
-    board.appendChild(tile);
-  });
+  }
 }
 
 (async function init() {
