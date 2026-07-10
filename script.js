@@ -4,6 +4,7 @@ let active = new Set();
 
 const legend = document.getElementById("legend");
 const board = document.getElementById("board");
+const boardLower = document.getElementById("boardLower");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
 const modalContent = document.getElementById("modalContent");
@@ -54,32 +55,59 @@ function buildLegend() {
   });
 }
 
-function tileHtml(tool, color, activeState) {
-  return `
+function createTile(tool) {
+  const idx = categories.indexOf(tool.cat);
+  const color = idx >= 0 ? getColor(idx) : "#7b8ca4";
+  const isActive = active.has(tool.cat);
+
+  const tile = document.createElement("div");
+  tile.className = "tile";
+  if (active.size && !isActive) tile.classList.add("dim");
+
+  if (isActive) {
+    tile.style.background = color;
+    tile.style.borderColor = color;
+    tile.style.color = "#fff";
+  } else {
+    tile.style.background = "var(--panel-2)";
+    tile.style.borderColor = "var(--line)";
+    tile.style.color = "var(--ink)";
+  }
+
+  tile.innerHTML = `
     <div class="num">${tool.n}</div>
     <div class="sym">${tool.s}</div>
     <div class="name">${tool.name}</div>
     <div class="cat">${tool.cat}</div>
     <a class="link" href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.urlText}</a>
   `;
+
+  tile.onclick = () => openModal(tool);
+  return tile;
 }
 
-function openModal(tool, color) {
+function openModal(tool) {
+  const idx = categories.indexOf(tool.cat);
+  const color = idx >= 0 ? getColor(idx) : "#2a74ff";
+
   modalContent.innerHTML = `
     <h2 id="modalTitle">${tool.name}</h2>
     <p><strong>${tool.s}</strong> — ${tool.cat}</p>
-    <p>Tile ${tool.n} is placed at row ${tool.r}, column ${tool.c}.</p>
+    <p>Tile ${tool.n} is positioned at row ${tool.r}, column ${tool.c}.</p>
     <p>Link: <a href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.urlText}</a></p>
 
     <div class="detail-grid">
+      <div class="detail-card"><strong>Number</strong>${tool.n}</div>
       <div class="detail-card"><strong>Symbol</strong>${tool.s}</div>
       <div class="detail-card"><strong>Category</strong>${tool.cat}</div>
       <div class="detail-card"><strong>Row</strong>${tool.r}</div>
       <div class="detail-card"><strong>Column</strong>${tool.c}</div>
       <div class="detail-card"><strong>Source</strong><a href="https://digital.ai/learn/devsecops-periodic-table/" target="_blank" rel="noopener noreferrer">Digital.ai periodic table</a></div>
-      <div class="detail-card"><strong>Related</strong><a href="https://digital.ai/learn/devsecops-periodic-table/learn-more/" target="_blank" rel="noopener noreferrer">Learn more</a></div>
+      <div class="detail-card"><strong>Learn more</strong><a href="https://digital.ai/learn/devsecops-periodic-table/learn-more/" target="_blank" rel="noopener noreferrer">DevOps diagram generator</a></div>
     </div>
   `;
+
+  modal.style.borderTop = `6px solid ${color}`;
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 }
@@ -109,44 +137,37 @@ function render() {
   });
 
   board.innerHTML = "";
+  boardLower.innerHTML = "";
 
-  const maxRow = 7;
-  const cols = 18;
-
-  for (let r = 1; r <= maxRow; r++) {
-    for (let c = 1; c <= cols; c++) {
+  for (let r = 1; r <= 5; r++) {
+    for (let c = 1; c <= 18; c++) {
       const tool = tools.find(t => t.r === r && t.c === c);
-      if (!tool) {
-        const gap = document.createElement("div");
-        gap.className = "gap";
-        board.appendChild(gap);
-        continue;
-      }
-
-      const tile = document.createElement("div");
-      const idx = categories.indexOf(tool.cat);
-      const isActive = active.has(tool.cat);
-      const color = idx >= 0 ? getColor(idx) : "#7b8ca4";
-
-      tile.className = "tile";
-      if (active.size && !isActive) tile.classList.add("dim");
-
-      tile.style.gridColumn = c;
-      tile.style.gridRow = r;
-
-      if (isActive) {
-        tile.style.background = color;
-        tile.style.borderColor = color;
-        tile.style.color = "#fff";
+      if (tool) {
+        const tile = createTile(tool);
+        tile.style.gridColumn = c;
+        tile.style.gridRow = r;
+        board.appendChild(tile);
       } else {
-        tile.style.background = "var(--panel-2)";
-        tile.style.borderColor = "var(--line)";
-        tile.style.color = "var(--ink)";
+        const empty = document.createElement("div");
+        empty.className = "cell-empty";
+        board.appendChild(empty);
       }
+    }
+  }
 
-      tile.innerHTML = tileHtml(tool, color, isActive);
-      tile.onclick = () => openModal(tool, color);
-      board.appendChild(tile);
+  for (let r = 6; r <= 7; r++) {
+    for (let c = 1; c <= 18; c++) {
+      const tool = tools.find(t => t.r === r && t.c === c);
+      if (tool) {
+        const tile = createTile(tool);
+        tile.style.gridColumn = c;
+        tile.style.gridRow = r - 5;
+        boardLower.appendChild(tile);
+      } else {
+        const empty = document.createElement("div");
+        empty.className = "cell-empty";
+        boardLower.appendChild(empty);
+      }
     }
   }
 }
