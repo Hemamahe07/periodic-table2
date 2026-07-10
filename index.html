@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DevSecOps Periodic Table</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="title-block">
-      <h1>DevSecOps Periodic Table</h1>
-      <p>Interactive DevSecOps sample with exact periodic-table structure</p>
+      <h1>Periodic Table of DevSecOps Tools</h1>
+      <p>Select categories from the legend to highlight matching tools.</p>
     </div>
-
     <div class="controls">
-      <input id="searchInput" type="text" placeholder="Search by name, symbol, category..." />
-      <select id="categoryFilter">
-        <option value="all">All Categories</option>
+      <input id="search" type="search" placeholder="Search tool or category" />
+      <select id="viewMode">
+        <option value="all">All tools</option>
+        <option value="selected">Selected only</option>
+        <option value="dim">Dim non-selected</option>
       </select>
     </div>
   </header>
@@ -26,13 +27,16 @@
   </section>
 
   <main class="table-wrap">
-    <div id="table" class="periodic-table" aria-label="DevSecOps Periodic Table"></div>
+    <div id="table" class="periodic-table" aria-label="DevSecOps tools periodic table"></div>
   </main>
 
-  <div id="modalBackdrop" class="modal-backdrop hidden">
+  <div id="detailModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
     <div class="modal">
-      <button id="closeModal" class="close-btn" aria-label="Close">×</button>
-      <div id="modalContent"></div>
+      <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+      <h2 id="detailTitle"></h2>
+      <p id="detailCategory" class="meta"></p>
+      <p id="detailShort" class="meta"></p>
+      <p class="meta"><a id="detailLink" href="#" target="_blank" rel="noreferrer">Open tool</a></p>
     </div>
   </div>
 
