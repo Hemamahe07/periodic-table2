@@ -1,44 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DevSecOps Periodic Table</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Periodic Table of DevSecOps Tools</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="title-block">
+    <div>
       <h1>Periodic Table of DevSecOps Tools</h1>
-      <p>Select categories from the legend to highlight matching tools.</p>
+      <p>Select categories to highlight matching tools.</p>
     </div>
-    <div class="controls">
-      <input id="search" type="search" placeholder="Search tool or category" />
-      <select id="viewMode">
-        <option value="all">All tools</option>
-        <option value="selected">Selected only</option>
-        <option value="dim">Dim non-selected</option>
-      </select>
-    </div>
+    <button id="clearFilters">Clear</button>
   </header>
 
-  <section class="legend-wrap">
-    <div id="legend" class="legend"></div>
-  </section>
+  <section class="legend" id="legend"></section>
 
-  <main class="table-wrap">
-    <div id="table" class="periodic-table" aria-label="DevSecOps tools periodic table"></div>
+  <main class="board-wrap">
+    <div class="board" id="board"></div>
   </main>
 
-  <div id="detailModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-    <div class="modal">
-      <button class="close-btn" id="closeModal" aria-label="Close">×</button>
-      <h2 id="detailTitle"></h2>
-      <p id="detailCategory" class="meta"></p>
-      <p id="detailShort" class="meta"></p>
-      <p class="meta"><a id="detailLink" href="#" target="_blank" rel="noreferrer">Open tool</a></p>
-    </div>
-  </div>
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="modal hidden" id="modal">
+    <button class="close" id="closeModal">×</button>
+    <div id="modalContent"></div>
+  </aside>
 
   <script src="script.js"></script>
 </body>
