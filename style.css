@@ -5,8 +5,8 @@
   --ink:#102033;
   --muted:#5d6c80;
   --line:#d8e2ee;
-  --shadow-strong:0 40px 120px rgba(0,0,0,.55);
   --accent:#2a74ff;
+  --shadow-strong:0 40px 120px rgba(0,0,0,.55);
 }
 
 *{box-sizing:border-box}
@@ -87,20 +87,20 @@ html,body{
   margin:0 auto;
   padding:24px 28px 30px;
   border-radius:28px;
-  background:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.6);
   box-shadow:0 24px 70px rgba(16,32,51,.10);
   border:1px solid rgba(255,255,255,.8);
 }
 
 .board-title{
   text-align:center;
-  font-weight:800;
   font-size:18px;
+  font-weight:800;
   margin-bottom:18px;
-  letter-spacing:.02em;
 }
 
-.board{
+.board,
+.board-lower{
   display:grid;
   grid-template-columns:repeat(18, 76px);
   grid-auto-rows:100px;
@@ -109,7 +109,15 @@ html,body{
   min-width:max-content;
 }
 
-.gap{
+.board{
+  margin-bottom:0;
+}
+
+.spacer{
+  height:28px;
+}
+
+.cell-empty{
   visibility:hidden;
 }
 
@@ -117,7 +125,6 @@ html,body{
   position:relative;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
   padding:8px;
   border-radius:14px;
   background:var(--panel-2);
@@ -171,7 +178,6 @@ html,body{
   font-size:8px;
   color:inherit;
   text-decoration:underline;
-  opacity:.95;
   word-break:break-word;
 }
 
@@ -302,7 +308,8 @@ html,body{
     border-radius:18px;
   }
 
-  .board{
+  .board,
+  .board-lower{
     grid-template-columns:repeat(18, 58px);
     grid-auto-rows:82px;
     gap:4px;
