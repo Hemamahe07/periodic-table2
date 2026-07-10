@@ -31,7 +31,7 @@ async function loadData() {
     tools = data.tools || [];
     status.textContent = "";
   } catch (err) {
-    status.textContent = "elements.json failed to load. Run this from a local server and keep JSON in the same folder.";
+    status.textContent = "elements.json failed to load. Keep the JSON file in the same folder and open through a local server.";
     console.error(err);
     categories = [];
     tools = [];
