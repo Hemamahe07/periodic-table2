@@ -9,36 +9,32 @@ const overlay = document.getElementById("overlay");
 const modalContent = document.getElementById("modalContent");
 const clearFilters = document.getElementById("clearFilters");
 const closeModal = document.getElementById("closeModal");
+const status = document.getElementById("status");
 
 function getColor(i) {
   const colors = [
-    "#2a74ff",
-    "#18a58b",
-    "#9b59b6",
-    "#e67e22",
-    "#e74c3c",
-    "#16a085",
-    "#f1c40f",
-    "#34495e",
-    "#1abc9c",
-    "#d35400",
-    "#8e44ad",
-    "#3498db",
-    "#27ae60",
-    "#c0392b",
-    "#7f8c8d",
-    "#6c5ce7",
-    "#00b894",
-    "#fd79a8"
+    "#2a74ff","#18a58b","#9b59b6","#e67e22","#e74c3c",
+    "#16a085","#f1c40f","#34495e","#1abc9c","#d35400",
+    "#8e44ad","#3498db","#27ae60","#c0392b","#7f8c8d",
+    "#6c5ce7","#00b894","#fd79a8"
   ];
   return colors[i % colors.length];
 }
 
 async function loadData() {
-  const res = await fetch("elements.json");
-  const data = await res.json();
-  categories = data.categories;
-  tools = data.tools;
+  try {
+    const res = await fetch("./elements.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`JSON load failed: ${res.status}`);
+    const data = await res.json();
+    categories = data.categories || [];
+    tools = data.tools || [];
+    status.textContent = "";
+  } catch (err) {
+    status.textContent = "elements.json failed to load. Run this from a local server and keep JSON in the same folder.";
+    console.error(err);
+    categories = [];
+    tools = [];
+  }
 }
 
 function buildLegend() {
@@ -50,16 +46,11 @@ function buildLegend() {
     b.textContent = cat;
     b.dataset.cat = cat;
     b.style.setProperty("--cat-color", getColor(i));
-
     b.onclick = () => {
-      if (active.has(cat)) {
-        active.delete(cat);
-      } else {
-        active.add(cat);
-      }
+      if (active.has(cat)) active.delete(cat);
+      else active.add(cat);
       render();
     };
-
     legend.appendChild(b);
   });
 }
@@ -88,14 +79,13 @@ clearFilters.onclick = () => {
 };
 
 function render() {
-  legend.querySelectorAll(".legend-item").forEach((el) => {
-    const cat = el.dataset.cat;
+  legend.querySelectorAll(".legend-item").forEach((el, i) => {
+    const cat = categories[i];
     const isActive = active.has(cat);
     el.classList.toggle("active", isActive);
-    if (isActive) el.style.background = getColor(categories.indexOf(cat));
-    else el.style.background = "#fff";
+    el.style.background = isActive ? getColor(i) : "#fff";
     el.style.color = isActive ? "#fff" : "#102033";
-    el.style.borderColor = isActive ? getColor(categories.indexOf(cat)) : "var(--line)";
+    el.style.borderColor = isActive ? getColor(i) : "var(--line)";
   });
 
   board.innerHTML = "";
@@ -107,7 +97,6 @@ function render() {
 
     tile.className = "tile";
     if (active.size && !isActive) tile.classList.add("dim");
-    if (isActive) tile.classList.add("active");
 
     tile.style.gridColumn = tool.c;
     tile.style.gridRow = tool.r;
@@ -117,7 +106,7 @@ function render() {
       tile.style.borderColor = color;
       tile.style.color = "#fff";
     } else {
-      tile.style.background = "var(--tile-muted)";
+      tile.style.background = "var(--panel-2)";
       tile.style.borderColor = "var(--line)";
       tile.style.color = "var(--ink)";
     }
