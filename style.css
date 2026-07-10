@@ -3,7 +3,7 @@
   --ink:#102033;
   --muted:#607086;
   --line:#d7e0ea;
-  --tile:#ffffff;
+  --tile:#fff;
   --accent:#2a74ff;
   --accent2:#18a58b;
 }
@@ -143,3 +143,54 @@ button{
 }
 .tool-card .s{font-weight:800}
 .tool-card .c{font-size:12px;color:var(--muted);margin-top:4px}
+
+@media (max-width: 768px){
+  .topbar{
+    padding:16px 16px 10px;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .topbar h1{font-size:22px}
+
+  .legend{
+    padding:8px 16px 14px;
+    gap:8px;
+  }
+
+  .legend-item{
+    font-size:12px;
+    padding:7px 10px;
+  }
+
+  .board-wrap{
+    padding:0 12px 24px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .board{
+    min-width:1100px;
+    gap:4px;
+  }
+
+  .tile{
+    min-height:72px;
+    border-radius:10px;
+    padding:6px;
+  }
+
+  .tile .sym{
+    font-size:18px;
+  }
+
+  .tile .name{
+    font-size:10px;
+  }
+
+  .modal{
+    width:calc(100vw - 20px);
+    max-height:86vh;
+    padding:18px;
+  }
+}
