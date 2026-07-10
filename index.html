@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Periodic Table of DevSecOps Tools</title>
+  <title>Periodic Table Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div>
-      <h1>Periodic Table of DevSecOps Tools</h1>
-      <p>Select categories to highlight matching tools.</p>
+      <h1>Periodic Table Explorer</h1>
+      <p>Select categories to highlight matching tiles.</p>
     </div>
-    <button id="clearFilters">Clear</button>
+    <button id="clearFilters" type="button">Clear</button>
   </header>
 
-  <section class="legend" id="legend"></section>
+  <section class="legend" id="legend" aria-label="Categories"></section>
 
   <main class="board-wrap">
-    <div class="board" id="board"></div>
+    <div class="board" id="board" aria-label="Periodic table"></div>
   </main>
 
   <div class="overlay hidden" id="overlay"></div>
-  <aside class="modal hidden" id="modal">
-    <button class="close" id="closeModal">×</button>
+  <aside class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close" id="closeModal" type="button" aria-label="Close">×</button>
     <div id="modalContent"></div>
   </aside>
 
