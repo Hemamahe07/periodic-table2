@@ -172,8 +172,20 @@ function render() {
   }
 }
 
-(async function init() {
-  await loadData();
-  buildLegend();
-  render();
-})();
+async function loadData() {
+  const paths = ["./elements.json", "elements.json", "/elements.json"];
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      categories = data.categories || [];
+      tools = data.tools || [];
+      status.textContent = "";
+      return;
+    } catch (err) {
+      console.error(`Failed path: ${path}`, err);
+    }
+  }
+  status.textContent = "elements.json load failed. Check file path, filename, and hosting.";
+}
