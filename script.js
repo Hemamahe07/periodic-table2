@@ -23,19 +23,22 @@ function getColor(i) {
 }
 
 async function loadData() {
-  try {
-    const res = await fetch("./elements.json", { cache: "no-store" });
-    if (!res.ok) throw new Error(`JSON load failed: ${res.status}`);
-    const data = await res.json();
-    categories = data.categories || [];
-    tools = data.tools || [];
-    status.textContent = "";
-  } catch (err) {
-    status.textContent = "elements.json failed to load. Keep the JSON file in the same folder and open through a local server.";
-    console.error(err);
-    categories = [];
-    tools = [];
+  const paths = ["./elements.json", "elements.json", "/elements.json"];
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      categories = Array.isArray(data.categories) ? data.categories : [];
+      tools = Array.isArray(data.tools) ? data.tools : [];
+      status.textContent = "";
+      return true;
+    } catch (err) {
+      console.error("Failed path:", path, err);
+    }
   }
+  status.textContent = "elements.json failed to load. Check filename, location, and hosting.";
+  return false;
 }
 
 function buildLegend() {
@@ -172,20 +175,9 @@ function render() {
   }
 }
 
-async function loadData() {
-  const paths = ["./elements.json", "elements.json", "/elements.json"];
-  for (const path of paths) {
-    try {
-      const res = await fetch(path, { cache: "no-store" });
-      if (!res.ok) continue;
-      const data = await res.json();
-      categories = data.categories || [];
-      tools = data.tools || [];
-      status.textContent = "";
-      return;
-    } catch (err) {
-      console.error(`Failed path: ${path}`, err);
-    }
-  }
-  status.textContent = "elements.json load failed. Check file path, filename, and hosting.";
-}
+(async function init() {
+  const ok = await loadData();
+  if (!ok) return;
+  buildLegend();
+  render();
+})();
